@@ -9,19 +9,28 @@ public class StepDefi {
 		
 		@Given("^I am in login page of facebook$")
 		public void i_am_in_login_page_of_facebook() throws Throwable {
-		    // Write code here that turns the phrase above into concrete actions
+			 System.setProperty("webdriver.chrome.driver","E:\\Nisum\\chromedriver.exe");
+			  ChromeDriver driver=new ChromeDriver();
+
+			        driver.get("https://www.facebook.com/");
+			        Thread.sleep(5000);
+			        driver.manage().window().maximize();
+			        Thread.sleep(5000);
+			    
 		    throw new PendingException();
 		}
 
 		@When("^I enter the user name$")
 		public void i_enter_the_user_name() throws Throwable {
-		    // Write code here that turns the phrase above into concrete actions
+			driver.findElement(By.name("user name")).sendKeys("mk_vuppugalla@yahoo.com");
+			Thread.sleep(5000);
 		    throw new PendingException();
 		}
 
 		@When("^I enter the password$")
 		public void i_enter_the_password() throws Throwable {
-		    // Write code here that turns the phrase above into concrete actions
+			driver.findElement(By.name("Password")).sendKeys("Forgot@143");
+			Thread.sleep(5000);
 		    throw new PendingException();
 		}
 
